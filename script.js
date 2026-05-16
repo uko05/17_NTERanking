@@ -67,24 +67,24 @@ function setSlotImage(zokusei, filename) {
   const slot = getSlot(zokusei);
   if (!slot) return;
   if (filename) {
-    slot.innerHTML = `<img src="${imageFolder}${encodeURIComponent(filename)}" alt="">`;
+    slot.style.backgroundImage = `url('${imageFolder}${encodeURIComponent(filename)}')`;
     slot.classList.add('has-char');
   } else {
-    slot.innerHTML = '';
+    slot.style.backgroundImage = '';
     slot.classList.remove('has-char');
   }
 }
 
 function clearAllSlots() {
   document.querySelectorAll('.renkan-slot').forEach(slot => {
-    slot.innerHTML = '';
+    slot.style.backgroundImage = '';
     slot.classList.remove('has-char');
   });
 }
 
 function fillAllSlots(filename) {
   document.querySelectorAll('.renkan-slot').forEach(slot => {
-    slot.innerHTML = `<img src="${imageFolder}${encodeURIComponent(filename)}" alt="">`;
+    slot.style.backgroundImage = `url('${imageFolder}${encodeURIComponent(filename)}')`;
     slot.classList.add('has-char');
   });
 }
