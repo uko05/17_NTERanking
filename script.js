@@ -1,9 +1,7 @@
 import { incrementBakatareCount } from './bakatareCount.js';
 
-// ローカル開発: ../99_SharedImage/03_NTE/
-// GitHub Pages デプロイ後はCDN URLに変更してください
-const imageFolder = '../99_SharedImage/03_NTE/chara_icon/';
-const dataPath = '../99_SharedImage/03_NTE/chara_data/nte_chars.json';
+const imageFolder = 'https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/03_NTE/chara_icon/';
+const dataPath = 'https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/03_NTE/chara_data/nte_chars.json';
 
 let imageData = [];
 const SELECTED_LABEL = '☑';
