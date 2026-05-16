@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NTE（Neverness to Everness）の推しキャラを異能連環に並べてシェアしよう！NTE推しキャラ連環">
+    <title>【NTE】NTE推しキャラ連環</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/00_common/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/00_common/favicon_io/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" href="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/00_common/favicon_io/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/00_common/favicon_io/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/00_common/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/00_common/favicon_io/android-chrome-512x512.png">
+    <script type="module" src="./script.js" defer></script>
+</head>
+<body>
+    <header>
+      <div class="lang-switch">
+        <label><input type="radio" name="lang" value="ja" checked>日本語</label>
+        <label><input type="radio" name="lang" value="en">English</label>
+      </div>
+
+      <h1 data-i18n="title">NTE推しキャラ連環</h1>
+
+      <button id="save-button" data-i18n="save">Save Image</button>
+
+      <div>
+        <label>
+          <input type="checkbox" id="modeC">
+          <span data-i18n="bakatare">ばかたれモード</span>
+        </label>
+        <br>
+        <div class="note" data-i18n="mobileHint">※スマホの人は横画面推奨</div>
+      </div>
+    </header>
+
+    <!-- 連環表示エリア（html2canvasで保存される範囲） -->
+    <div id="grid">
+      <div class="renkan-wrapper">
+        <img src="../99_SharedImage/03_NTE/zokusei/InoRenkan.png" class="renkan-bg" alt="異能連環">
+        <!-- 各属性スロット：left/topは画像に合わせて要調整 -->
+        <div class="renkan-slot" data-zokusei="hikari"  style="left:50%;   top:10%"></div>
+        <div class="renkan-slot" data-zokusei="sou"     style="left:16%;   top:30%"></div>
+        <div class="renkan-slot" data-zokusei="rei"     style="left:84%;   top:30%"></div>
+        <div class="renkan-slot" data-zokusei="tamasii" style="left:16%;   top:70%"></div>
+        <div class="renkan-slot" data-zokusei="ju"      style="left:84%;   top:70%"></div>
+        <div class="renkan-slot" data-zokusei="yami"    style="left:50%;   top:90%"></div>
+      </div>
+      <label class="sad_label_migi">Twitter:@uko_dayo_</label>
+    </div>
+
+    <!-- キャラ選択タブ -->
+    <div class="tab-wrap">
+      <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked>
+      <label class="tab-label" for="TAB-01" data-category="hikari"><img src="../99_SharedImage/03_NTE/zokusei/Hikari.png" alt="光"></label>
+      <div class="tab-content"><div class="image-list"></div></div>
+
+      <input id="TAB-02" type="radio" name="TAB" class="tab-switch">
+      <label class="tab-label" for="TAB-02" data-category="sou"><img src="../99_SharedImage/03_NTE/zokusei/Sou.png" alt="相"></label>
+      <div class="tab-content"><div class="image-list"></div></div>
+
+      <input id="TAB-03" type="radio" name="TAB" class="tab-switch">
+      <label class="tab-label" for="TAB-03" data-category="rei"><img src="../99_SharedImage/03_NTE/zokusei/Rei.png" alt="霊"></label>
+      <div class="tab-content"><div class="image-list"></div></div>
+
+      <input id="TAB-04" type="radio" name="TAB" class="tab-switch">
+      <label class="tab-label" for="TAB-04" data-category="tamasii"><img src="../99_SharedImage/03_NTE/zokusei/Tamasii.png" alt="魂"></label>
+      <div class="tab-content"><div class="image-list"></div></div>
+
+      <input id="TAB-05" type="radio" name="TAB" class="tab-switch">
+      <label class="tab-label" for="TAB-05" data-category="ju"><img src="../99_SharedImage/03_NTE/zokusei/Ju.png" alt="呪"></label>
+      <div class="tab-content"><div class="image-list"></div></div>
+
+      <input id="TAB-06" type="radio" name="TAB" class="tab-switch">
+      <label class="tab-label" for="TAB-06" data-category="yami"><img src="../99_SharedImage/03_NTE/zokusei/Yami.png" alt="闇"></label>
+      <div class="tab-content"><div class="image-list"></div></div>
+    </div>
+
+    <a href="https://x.com/uko_dayo_" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/00_common/footer_icon/twitter_image.png" alt="Twitter" class="twitter-icon">
+    </a>
+    <label class="sad_label">　＜友達ください…</label>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://uko05.github.io/TopPage00/shared/sidebar.js"></script>
+</body>
+</html>

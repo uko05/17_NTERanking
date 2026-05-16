@@ -1,0 +1,276 @@
+@font-face {
+    font-family: 'SDK_JP_WEB';
+    src: url('font/SDK_JP_WEB.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'SDK_JP_WEB', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'SDK_JP_WEB', sans-serif;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* ===== ヘッダー ===== */
+header {
+    padding: 5px;
+    text-align: center;
+    position: relative;
+}
+
+.lang-switch {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+.lang-switch label {
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+#save-button {
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    color: white;
+    padding: 10px 60px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'SDK_JP_WEB', sans-serif;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#save-button:hover {
+    background-color: white;
+    color: #007bff;
+    border-color: #007bff;
+}
+
+/* ===== 連環表示エリア ===== */
+#grid {
+    background-color: transparent;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.renkan-wrapper {
+    position: relative;
+    width: 320px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.renkan-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 各属性スロット */
+.renkan-slot {
+    position: absolute;
+    width: 18%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s;
+}
+
+.renkan-slot.has-char {
+    box-shadow: 0 0 0 3px rgba(0, 150, 255, 0.9), 0 0 10px rgba(0, 150, 255, 0.5);
+}
+
+.renkan-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+.sad_label_migi {
+    display: block;
+    color: #A9A9A9;
+    font-size: 10px;
+    text-align: right;
+    width: 320px;
+    margin: 0 auto;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+/* ===== タブ ===== */
+.tab-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 720px;
+    margin: 5px auto;
+}
+
+.tab-switch {
+    display: none;
+}
+
+.tab-label {
+    color: white;
+    background: lightgray;
+    font-weight: bold;
+    font-family: 'SDK_JP_WEB', sans-serif;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+    white-space: nowrap;
+    text-align: center;
+    padding: 10px .5em;
+    order: -1;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.tab-label:not(:last-of-type) {
+    margin-right: 5px;
+}
+
+.tab-label img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.tab-wrap:after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: deepskyblue;
+    display: block;
+    order: -1;
+}
+
+.tab-switch:checked + .tab-label {
+    background: deepskyblue;
+}
+
+.tab-content {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    background-color: #fafafa;
+}
+
+.tab-switch:checked + .tab-label + .tab-content {
+    height: auto;
+    overflow: auto;
+    padding: 15px;
+    opacity: 1;
+    transition: .5s opacity;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+}
+
+/* ===== キャラ画像リスト ===== */
+.image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-start;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin: 1px;
+}
+
+.image-item {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid transparent;
+}
+
+.selected-label {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: rgba(0, 0, 255, 0.7);
+    color: white;
+    padding: 2px 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* ===== フッター ===== */
+.twitter-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.sad_label {
+    color: gray;
+    font-size: 10px;
+}
+
+/* ===== スマホ対応 ===== */
+@media only screen and (max-width: 768px) {
+    .lang-switch {
+        position: static;
+        display: block;
+        text-align: right;
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    #save-button {
+        padding: 10px 40px;
+        font-size: 14px;
+    }
+
+    .renkan-wrapper {
+        width: min(85vw, 320px);
+    }
+
+    .sad_label_migi {
+        width: min(85vw, 320px);
+    }
+
+    .tab-wrap {
+        width: 100%;
+    }
+
+    .image-item {
+        width: 80px;
+        height: 80px;
+    }
+}

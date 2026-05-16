@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"E:\\\\20_GitHub\\\\01_TiersList\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(New-Item -ItemType Directory -Force \"E:\\\\20_GitHub\\\\17_NTERanking\\\\font\")",
+      "Bash(Out-Null)",
+      "Bash(Copy-Item \"E:\\\\20_GitHub\\\\01_TiersList\\\\font\\\\SDK_JP_WEB.ttf\" \"E:\\\\20_GitHub\\\\17_NTERanking\\\\font\\\\SDK_JP_WEB.ttf\")"
+    ]
+  }
+}
